@@ -31,6 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'CoffeeShop.apps.CoffeeshopConfig',
+    'Menu.apps.MenuConfig',
+    'Generic.apps.GenericConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ninja',
+    "phonenumber_field",
 ]
 
 MIDDLEWARE = [
@@ -76,8 +80,12 @@ WSGI_APPLICATION = 'BrewMapAPI.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'brewmapdb', 
+        'USER': 'nathanharris',
+        'PASSWORD': 'Scout:1185',
+        'HOST': '127.0.0.1', 
+        'PORT': '5432',
     }
 }
 
