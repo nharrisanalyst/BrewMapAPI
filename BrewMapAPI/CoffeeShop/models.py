@@ -8,6 +8,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 from Menu.models import Menu
 from CoffeeShop.utils.LatLong import LatLong
 from django.contrib import admin
+from django.contrib.gis import admin as admin_gis
 # Create your models here.
 
 
@@ -42,10 +43,10 @@ class Shop(gis_models.Model):
             self.lat = latLong.lat
             self.long = latLong.long
         
-        if self.longitude and self.latitude:
+        if self.long and self.lat:
             self.point = Point(
-                float(self.longitude),
-                float(self.latitude),
+                float(self.long),
+                float(self.lat),
                 srid=4326
             )
         else:
@@ -60,5 +61,11 @@ class Rating(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     shop = models.ForeignKey(Shop , on_delete=models.CASCADE)
     rate  = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(5)])
+
+
+class ShopAdmin(admin_gis.GISModelAdmin):
+     
+
+
     
-admin.site.register(Shop)
+admin.site.register(Shop,ShopAdmin)
