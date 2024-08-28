@@ -64,8 +64,7 @@ class Rating(models.Model):
 
 
 class ShopAdmin(admin_gis.GISModelAdmin):
-     
+    pass
 
 
-    
 admin.site.register(Shop,ShopAdmin)
