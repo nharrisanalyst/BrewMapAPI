@@ -6,6 +6,7 @@ from django.db import models
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from localflavor.us.models import USStateField
+from django.contrib import admin
 
 
 class UsLocation(models.Model):
@@ -29,16 +30,23 @@ WEEKDAYS = [
   (7, _("Sunday")),
 ]
 
-class OpeningHours(models.Model):
 
+class OpeningHours(models.Model):
     weekday = models.IntegerField(choices=WEEKDAYS)
     from_hour = models.TimeField()
     to_hour = models.TimeField()
 
     class Meta:
+        verbose_name_plural  ='Opening Hours'
         ordering = ('weekday', 'from_hour')
         unique_together = ('weekday', 'from_hour', 'to_hour')
 
     def __unicode__(self):
         return u'%s: %s - %s' % (self.get_weekday_display(),
                                  self.from_hour, self.to_hour)
+
+
+
+
+admin.site.register(UsLocation)
+admin.site.register(OpeningHours)
