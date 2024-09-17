@@ -23,9 +23,10 @@ class LatLong:
         self.lat = None
         self.long = None
 
-    def setLatLong(self):
-        
-        self.location = self.geolocator.geocode(self.full_address)
+    def setLatLong(self) -> object:
+        print(self.full_address)
+        self.location = self.geolocator.geocode(self.full_address, timeout=10)
+        print('this is here', self.location, '/n')
         self.lat = self.location.latitude
         self.long = self.location.longitude
 

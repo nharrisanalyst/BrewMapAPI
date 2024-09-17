@@ -15,6 +15,7 @@ from django.contrib.gis import admin as admin_gis
 
 class Shop(gis_models.Model):
     name = models.CharField(max_length=255)
+    image = models.ImageField('img', upload_to='images/coffeeshop/', blank=True, null=True)
     phone_number = PhoneNumberField(region="US", blank=True)
     openingHours = models.ManyToManyField(OpeningHours)
     address = models.OneToOneField(UsLocation, on_delete=models.CASCADE)
@@ -45,14 +46,15 @@ class Shop(gis_models.Model):
         
         if self.long and self.lat:
             self.point = Point(
-                float(self.long),
-                float(self.lat),
+                float(self.lat),  #lat
+                float(self.long), #long
                 srid=4326
             )
         else:
             self.point = None
         
-        super().save(**kwargs)
+        shop = super().save(**kwargs)
+        return shop
 
 
    

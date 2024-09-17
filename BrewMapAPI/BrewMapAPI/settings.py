@@ -43,7 +43,27 @@ INSTALLED_APPS = [
     "django.contrib.gis",
     'ninja',
     "phonenumber_field",
+    "storages",
 ]
+
+AWS_ACCESS_KEY_ID = 'AKIARUOAQZMUMHMQ65AI'
+AWS_SECRET_ACCESS_KEY = 'FSHsKTQCfyjP/mXO0fRxLe2h0RpI3fNFCl1DpB8b'
+AWS_STORAGE_BUCKET_NAME = 'brewmapapiimages'
+AWS_S3_REGION_NAME = 'us-west-2'  # e.g., us-east-1
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
+
+# For serving static files directly from S3
+AWS_S3_URL_PROTOCOL = 'https'
+AWS_S3_USE_SSL = True
+AWS_S3_VERIFY = True
+
+# Static and media file configuration
+STATIC_URL = f'{AWS_S3_URL_PROTOCOL}://{AWS_S3_CUSTOM_DOMAIN}/static/'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+MEDIA_URL = f'{AWS_S3_URL_PROTOCOL}://{AWS_S3_CUSTOM_DOMAIN}/media/'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

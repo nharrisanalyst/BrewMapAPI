@@ -8,7 +8,7 @@
             "state":"CA",
             "zip_code":"95678"
         },
-        "phone_number":9167424117,
+        "phone_number":"9167424117",
         "menu_list":[
             {
                 "name":"latte",
@@ -28,7 +28,7 @@
             "state":"CA",
             "zip_code":"95678"
         },
-        "phone_number":9163900367,
+        "phone_number":"9163900367",
         "menu_list":[
             {
                 "name":"latte",
@@ -48,7 +48,7 @@
             "state":"CA",
             "zip_code":"95678"
         },
-        "phone_number": 9167717010,
+        "phone_number": "9167717010",
         "menu_list":[
             {
                 "name":"latte",
@@ -64,11 +64,11 @@
         "name":"World Traveler Coffee Roasters",
         "address":{
             "city":"Roseville",
-            "address_1":"106 N Sunrise Ave c7",
+            "address_1":"106 N Sunrise Ave",
             "state":"CA",
             "zip_code":"95661"
         },
-        "phone_number":9162123177,
+        "phone_number":"9162123177",
         "menu_list":[
             {
                 "name":"latte",
@@ -84,11 +84,11 @@
         "name":"Bloom Coffee & Kitchen",
         "address":{
             "city":"Roseville",
-            "address_1":"1485 Eureka Rd #100",
+            "address_1":"1485 Eureka Rd",
             "state":"CA",
             "zip_code":"95661"
         },
-        "phone_number":9167732332,
+        "phone_number":"9167732332",
         "menu_list":[
             {
                 "name":"latte",
