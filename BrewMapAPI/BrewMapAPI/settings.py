@@ -11,6 +11,16 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import environ
+import os
+env = environ.Env(
+    # set casting, default value
+    DEBUG=(bool, False)
+)
+
+BASE_DIR_ENV = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+environ.Env.read_env(os.path.join(BASE_DIR_ENV, 'BrewMapAPI/.env'))
+DEBUG = env('DEBUG')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -46,11 +56,11 @@ INSTALLED_APPS = [
     "storages",
 ]
 
-AWS_ACCESS_KEY_ID = 'AKIARUOAQZMUMHMQ65AI'
-AWS_SECRET_ACCESS_KEY = 'FSHsKTQCfyjP/mXO0fRxLe2h0RpI3fNFCl1DpB8b'
-AWS_STORAGE_BUCKET_NAME = 'brewmapapiimages'
-AWS_S3_REGION_NAME = 'us-west-2'  # e.g., us-east-1
-AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = env('AWS_STORAGE_BUCKET_NAME')
+AWS_S3_REGION_NAME = env('AWS_S3_REGION_NAME')  # e.g., us-east-1
+AWS_S3_CUSTOM_DOMAIN = env('AWS_S3_CUSTOM_DOMAIN')
 AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
 
 # For serving static files directly from S3
