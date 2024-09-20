@@ -1,0 +1,144 @@
+{
+    "shops":[
+        {
+            "name":"Shady Coffee and Tea",
+            "address":{
+                "city":"Roseville",
+                "address_1":"325 Douglas Blvd",
+                "address_2":"",
+                "state":"CA",
+                "zip_code":"95678"
+            },
+            "phone_number":"9167424117",
+            "menu_list":[
+                {
+                    "name":"Latte",
+                    "price":5.0,
+                    "reporter":"brewmapdata"
+                },
+                {
+                    "name":"Black Coffee",
+                    "price":3.0,
+                    "reporter":"brewmapdata"
+                }
+            ],
+            "miles":0.869215563248131,
+            "point":{
+                "lat":38.7442091,
+                "long":-121.2874897
+            }
+        },
+        {
+            "name":"Fourscore Coffee",
+            "address":{
+                "city":"Roseville",
+                "address_1":"327 Lincoln St",
+                "address_2":"",
+                "state":"CA",
+                "zip_code":"95678"
+            },
+            "phone_number":"9163900367",
+            "menu_list":[
+                {
+                    "name":"Latte",
+                    "price":5.0,
+                    "reporter":"brewmapdata"
+                },
+                {
+                    "name":"Black Coffee",
+                    "price":3.0,
+                    "reporter":"brewmapdata"
+                }
+            ],
+            "miles":1.1570825235872504,
+            "point":{
+                "lat":38.7514099,
+                "long":-121.284982
+            }
+        },
+        {
+            "name":"The Fig Tree Coffee, Art, & Music Lounge",
+            "address":{
+                "city":"Roseville",
+                "address_1":"217 Vernon St",
+                "address_2":"",
+                "state":"CA",
+                "zip_code":"95678"
+            },
+            "phone_number": "9167717010",
+            "menu_list":[
+                {
+                    "name":"Latte",
+                    "price":5.0,
+                    "reporter":"brewmapdata"
+                },
+                {
+                    "name":"Black Coffee",
+                    "price":3.0,
+                    "reporter":"brewmapdata"
+                }
+            ],
+            "miles":1.2175700137757992,
+            "point":{
+                "lat":38.7494221,
+                "long":-121.2832332
+            }
+        },
+        {
+            "name":"World Traveler Coffee Roasters",
+            "address":{
+                "city":"Roseville",
+                "address_1":"106 N Sunrise Ave",
+                "address_2":"c7",
+                "state":"CA",
+                "zip_code":"95661"
+            },
+            "phone_number":"9162123177",
+            "menu_list":[
+                {
+                    "name":"Latte",
+                    "price":5.0,
+                    "reporter":"brewmapdata"
+                },
+                {
+                    "name":"Black Coffee",
+                    "price":3.0,
+                    "reporter":"brewmapdata"
+                }
+            ],
+            "miles":2.25690049501536,
+            "point":{
+                "lat":38.744517460578756,
+                "long":-121.2663445997386
+            }
+        },
+        {
+            "name":"Bloom Coffee & Kitchen",
+            "address":{
+                "city":"Roseville",
+                "address_1":"1485 Eureka Rd",
+                "address_2":"#100",
+                "state":"CA",
+                "zip_code":"95661"
+            },
+            "phone_number":"9167732332",
+            "menu_list":[
+                {
+                    "name":"Latte",
+                    "price":5.0,
+                    "reporter":"brewmapdata"
+                },
+                {
+                    "name":"Black Coffee",
+                    "price":3.0,
+                    "reporter":"brewmapdata"
+                }
+            ],
+            "miles":3.3276964642052906,
+            "point":{
+                "lat":38.752982,
+                "long":-121.25144144842889
+            }
+        }
+    ]
+}

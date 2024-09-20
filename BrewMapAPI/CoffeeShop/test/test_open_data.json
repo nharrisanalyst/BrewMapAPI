@@ -1,0 +1,40 @@
+{
+    "data":[
+        {
+            "weekday":1,
+            "from_hour":"07:00:00",
+            "to_hour":"19:00:00"
+        },
+        {
+            "weekday":2,
+            "from_hour":"07:00:00",
+            "to_hour":"19:00:00"
+        },
+        {
+            "weekday":3,
+            "from_hour":"07:00:00",
+            "to_hour":"19:00:00"
+        },
+        {
+            "weekday":4,
+            "from_hour":"07:00:00",
+            "to_hour":"19:00:00"
+        },
+        {
+            "weekday":5,
+            "from_hour":"07:00:00",
+            "to_hour":"19:00:00"
+        },
+        {
+            "weekday":6,
+            "from_hour":"07:00:00",
+            "to_hour":"19:00:00"
+        },
+        {
+            "weekday":7,
+            "from_hour":"07:00:00",
+            "to_hour":"19:00:00"
+        }
+    ]
+}
+

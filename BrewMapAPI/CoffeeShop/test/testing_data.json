@@ -1,0 +1,109 @@
+{
+ "data":[
+    {
+        "name":"Shady Coffee and Tea",
+        "address":{
+            "city":"Roseville",
+            "address_1":"325 Douglas Blvd",
+            "address_2":"",
+            "state":"CA",
+            "zip_code":"95678"
+        },
+        "phone_number":"9167424117",
+        "menu_list":[
+            {
+                "name":"latte",
+                "price":5.0
+            },
+            {
+                "name":"black coffee",
+                "price":3.0
+            }
+        ]
+    },
+    {
+        "name":"Fourscore Coffee",
+        "address":{
+            "city":"Roseville",
+            "address_1":"327 Lincoln St",
+            "address_2":"",
+            "state":"CA",
+            "zip_code":"95678"
+        },
+        "phone_number":"9163900367",
+        "menu_list":[
+            {
+                "name":"latte",
+                "price":5.0
+            },
+            {
+                "name":"black coffee",
+                "price":3.0
+            }
+        ]
+    },
+    {
+        "name":"The Fig Tree Coffee, Art, & Music Lounge",
+        "address":{
+            "city":"Roseville",
+            "address_1":"217 Vernon St",
+            "address_2":"",
+            "state":"CA",
+            "zip_code":"95678"
+        },
+        "phone_number": "9167717010",
+        "menu_list":[
+            {
+                "name":"latte",
+                "price":5.0
+            },
+            {
+                "name":"black coffee",
+                "price":3.0
+            }
+        ]
+    },
+    {
+        "name":"World Traveler Coffee Roasters",
+        "address":{
+            "city":"Roseville",
+            "address_1":"106 N Sunrise Ave",
+            "address_2":"c7",
+            "state":"CA",
+            "zip_code":"95661"
+        },
+        "phone_number":"9162123177",
+        "menu_list":[
+            {
+                "name":"latte",
+                "price":5.0
+            },
+            {
+                "name":"black coffee",
+                "price":3.0
+            }
+        ]
+    },
+    {
+        "name":"Bloom Coffee & Kitchen",
+        "address":{
+            "city":"Roseville",
+            "address_1":"1485 Eureka Rd",
+            "address_2":"#100",
+            "state":"CA",
+            "zip_code":"95661"
+        },
+        "phone_number":"9167732332",
+        "menu_list":[
+            {
+                "name":"latte",
+                "price":5.0
+            },
+            {
+                "name":"black coffee",
+                "price":3.0
+            }
+        ]
+    }
+ ]
+}
