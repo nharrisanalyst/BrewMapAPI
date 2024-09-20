@@ -1,9 +1,11 @@
 from typing import List
 from ninja import Router
 from django.contrib.gis.geos import Point
+from django.contrib.gis.db.models.functions import Distance
 from django.contrib.gis.measure import D
-from CoffeeShop.schema import CoffeeShopScheme
+from CoffeeShop.schema import CoffeeShopReturnSchema
 from CoffeeShop.models import Shop
+from CoffeeShop.utils.ShopsJSON import Shop_to_JOSN
 
 
 router = Router()
@@ -12,7 +14,7 @@ router = Router()
 def hello(request):
     return "hello world"
 
-@router.get('/list', response = list[CoffeeShopScheme])
+@router.get('/list', response = CoffeeShopReturnSchema)
 def list_coffee_shops(request,lat:float, long:float):
     distance_miles_to_search = 10
     pnt = Point(
@@ -21,10 +23,11 @@ def list_coffee_shops(request,lat:float, long:float):
                 srid=4326
             )
     shops_all = Shop.objects.all()
-    print('this is all the shops',shops_all[0].point, pnt, lat, long)
-    shops = Shop.objects.filter(point__distance_lte=(pnt, D(mi=distance_miles_to_search)))
-    print('these are the shops',shops)
-    return list(shops)
+    shops = Shop.objects.annotate(distance=Distance('point',pnt)).filter(point__distance_lte=(pnt, D(mi=distance_miles_to_search)))
+    ShopsJSON = []
+    for shop in shops:
+        ShopsJSON.append(Shop_to_JOSN(shop))
+    return 200, {"shops":ShopsJSON}
 
 
 

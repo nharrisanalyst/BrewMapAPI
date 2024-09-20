@@ -13,7 +13,7 @@ class LatLong:
         self.address = address
         
         ## self.loc = self.name + ", " + self.address
-        address_2 = f" {self.address.address_2}" or ""
+        address_2 = ""
         if self.address.address_1 and self.address.city and self.address.state and self.address.zip_code:
             self.full_address:str = f"{self.address.address_1}{address_2}, {self.address.city}, {self.address.state}, {self.address.zip_code}"
         else:
@@ -24,9 +24,7 @@ class LatLong:
         self.long = None
 
     def setLatLong(self) -> object:
-        print(self.full_address)
-        self.location = self.geolocator.geocode(self.full_address, timeout=10)
-        print('this is here', self.location, '/n')
+        self.location = self.geolocator.geocode(self.full_address, timeout=100)
         self.lat = self.location.latitude
         self.long = self.location.longitude
 

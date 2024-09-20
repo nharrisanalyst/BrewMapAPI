@@ -24,7 +24,7 @@ class Shop(gis_models.Model):
         max_digits=9, decimal_places=6, blank=True, null=True)
     long = models.DecimalField(
         max_digits=9, decimal_places=6, blank=True, null=True)
-
+    
     ##point is the actual point on  globe where this store is 
     point = gis_models.PointField(
         blank=True,
@@ -35,6 +35,13 @@ class Shop(gis_models.Model):
     @property
     def average_rating(self):
         return  self.rating_set.all().aggregate(models.Avg('rate'))['rate__avg']
+
+    @property
+    def miles(self) -> float:
+        if self.distance:
+            return self.distance.mi
+        else:
+            return 0.00
 
     def save(self, **kwargs):
         

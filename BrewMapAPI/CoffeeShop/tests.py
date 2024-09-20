@@ -1,4 +1,5 @@
 import os
+import sys
 from django.test import TestCase
 import json
 from ninja.testing import TestClient
@@ -50,7 +51,6 @@ class LatLongGetTest(TestCase):
             data_open = json.load(json_data)
         openingHours_list =[]
         ## data for days of the week 
-        print(data_open, 'this is a day')
         for day in data_open['data']:
             openingHours = OpeningHours(weekday=day["weekday"], from_hour=day["from_hour"], to_hour=day["to_hour"])
             openingHours.save()
@@ -67,20 +67,22 @@ class LatLongGetTest(TestCase):
                     black_coffee.save()
             menu = Menu(latte = latte, black= black_coffee)
             menu.save()
-            address = UsLocation(city=shop['address']['city'], state=shop['address']['state'], address_1=shop['address']['address_1'], zip_code=shop['address']['zip_code'])
+            address = UsLocation(city=shop['address']['city'], state=shop['address']['state'], address_1=shop['address']['address_1'], address_2=shop['address']['address_2'], zip_code=shop['address']['zip_code'])
             address.save()
             phone_number = shop['phone_number']
             shop_model= Shop(name=shop['name'], phone_number= phone_number, menu=menu, address= address)
             shop_model.save()
             shop_model.openingHours.add(*openingHours_list)
             
+            
         
         
 
             
-        
+    
     def test_lat_long_get(self):
         ##getting test json data 
+        self.maxDiff = None
         with open(test_response_json) as json_data:
             response_test_data = json.load(json_data)
         self.client = TestClient(router)
@@ -88,9 +90,12 @@ class LatLongGetTest(TestCase):
         latitude = 38.73200589100485
         longitude = -121.2983564875914
         response = self.client.get(f"/list?lat={latitude}&long={longitude}")
-        print(self)
+        #print(self)
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.json(), response_test_data)
+        #sys.stderr.write('this is the response')
+        #sys.stderr.write(repr(response.data) + '\n')
+        #print('this is the response data', response.data)
+        self.assertEqual(response.data, response_test_data)
 
 
 
